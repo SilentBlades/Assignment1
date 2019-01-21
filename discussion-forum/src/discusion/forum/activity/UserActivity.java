@@ -73,10 +73,6 @@ public class UserActivity {
 
 		// ask user to write the question body
 		System.out.println("Enter question : ");
-		// ** Please write your code below **
-		// Please write code that follows the instruction below
-		// 1. Use Utility.inputFromUser() to get the question body that the user entered
-		// 2. Store the question body in a String variable called message
 		String message = Utility.inputFromUser();
 
 		questionService.createQuestion(title, message, user);
@@ -93,19 +89,6 @@ public class UserActivity {
 	 */
 	public void seeAllQuestions(UserActivity userActivity, User user) throws NumberFormatException, IOException {
 		ArrayList<Question> questions = QuestionServiceImpl.questions; // getting all the questions
-
-		// ** Please write your code below: **
-		//
-		// Replace the ... in the if statement condition with correct boolean statement. You should follow the instruction
-		// below:
-		// 1) If there are 0 questions, print out "No question posted yet"
-		// 2) If there are 1 or more questions, print out information about the question
-		//
-		// You can check how many the number of questions by using the size() function on the questions variable
-		// such as: questions.size()
-		//
-		// The code for printing out "No question posted yet" and information about the question
-		// has been written for you. You simply need to replace the ... in the if statement condition.
 
 		if ( questions.size() == 0 ) {
 			System.out.println("No question posted yet");
@@ -154,13 +137,7 @@ public class UserActivity {
 	public void deleteQuestion(UserActivity userActivity, User user) throws NumberFormatException, IOException {
 		System.out.println("Enter question number you want to delete : ");
 		Question question = getQuestion();
-
-		// ** Please write your code below: **
-		//
-		// Note: This is the most challenging part of the project, so please don't worry if you don't get it correct
-		// on the first try. Please feel free to look at the solution if you are stuck.
-		//
-		// Write the logic to delete a question from the class forum, and you should follow the rules below:
+		
 		// 1) If the current user's role is an admin, the user can delete the question
 		//
 		// 2) Else if the current user's role is a moderator, the user can delete the question only:
@@ -170,27 +147,10 @@ public class UserActivity {
 		//
 		// 3) Else if the current user is also the user who wrote the question, we can delete the question.
 		// 	  Otherwise, you should print: "You are not authorised to delete this question"
-		//
-		// ** A few tips and pointers: **
-		// 1) For a question, you can use question.getUser() to get the user who wrote the question
-		//
-		// 2) For a user, you can use user.getUserRole() to get the user's role
-		//
-		// 3) User roles are defined as:
-		// 	  a) admin role: UserRole.ADMIN
-		//    b) moderator role: UserRole.MODERATOR
-		//    c) regular user role: UserRole.USER
-		////
-		// 5) You can use userA == userB to compare if two users are the same person
-		//
-		// 6) You can user questionService.deleteQuestion(question) to delete the question
-
 
 		if (user.getUserRole() == UserRole.ADMIN) { // the user is an admin
 			questionService.deleteQuestion(question); // deleting a question
 		}
-		// Write else if condition to check if the user is a moderator
-		// Write else if condition to check if the user is a regular user
 		else if(user.getUserRole() == UserRole.MODERATOR) {
 			if(question.getUser().getUserRole() == UserRole.USER 
 					|| question.getUser().getUsername() == user.getUsername()) {

@@ -13,11 +13,6 @@ public class Reply extends AbstractEntity {
 
 	public void autoGenerateId() {
 		lastEntry = lastEntry + 1L;
-
-		// please write your code below and follow this instruction:
-		// 1. Call the parent class' setId method and pass in lastEntry as the method variable;
-		//
-		// Note: You can read the setId method in the AbstractEntity class to understand how the setId method works
 		super.setId(lastEntry);
 	}
 
@@ -27,8 +22,6 @@ public class Reply extends AbstractEntity {
 	 * @return the reply body
 	 */
 	public String getMessage() {
-		// please write your code here
-		// You should return the instance variable message
 		return this.message;
 	}
 
@@ -38,9 +31,6 @@ public class Reply extends AbstractEntity {
 	 * @param message: the message that we want to set as the reply body
 	 */
 	public void setMessage(String message) {
-		// please write your code here
-		// You should set the instance variable message to the
-		// message variable that's passed into this function
 		this.message = message;
 	}
 
@@ -50,8 +40,6 @@ public class Reply extends AbstractEntity {
 	 * @return the user who wrote this reply
 	 */
 	public User getUser() {
-		// please write your code here
-		// You should return the user instance variable
 		return this.user;
 	}
 
@@ -61,9 +49,6 @@ public class Reply extends AbstractEntity {
 	 * @param user: the user who wrote this reply
 	 */
 	public void setUser(User user) {
-		// please write your code here
-		// You should set the instance variable user to the user variable
-		// that is passed into this method
 		this.user = user;
 	}
 
@@ -73,8 +58,6 @@ public class Reply extends AbstractEntity {
 	 * @return the question to which this reply belongs to
 	 */
 	public Question getQuestion() {
-		// please write your code here
-		// You should set the instance variable question
 		return this.question;
 	}
 
@@ -84,9 +67,6 @@ public class Reply extends AbstractEntity {
 	 * @param question: the question that this reply belongs to
 	 */
 	public void setQuestion(Question question) {
-		// please write your code here
-		// You should set the instance variable question to the question variable
-		// that is passed into this method
 		this.question = question;
 	}
 }
