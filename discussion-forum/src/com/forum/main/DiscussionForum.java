@@ -7,7 +7,7 @@ import com.forum.units.User;
 import com.forum.units.UserRole;
 import com.forum.util.Utility;
 
-import discusion.forum.activiy.UserActivity;
+import discusion.forum.activity.UserActivity;
 
 public class DiscussionForum {
 	

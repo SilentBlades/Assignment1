@@ -18,6 +18,7 @@ public class Reply extends AbstractEntity {
 		// 1. Call the parent class' setId method and pass in lastEntry as the method variable;
 		//
 		// Note: You can read the setId method in the AbstractEntity class to understand how the setId method works
+		super.setId(lastEntry);
 	}
 
 	/**
@@ -28,6 +29,7 @@ public class Reply extends AbstractEntity {
 	public String getMessage() {
 		// please write your code here
 		// You should return the instance variable message
+		return this.message;
 	}
 
 	/**
@@ -39,6 +41,7 @@ public class Reply extends AbstractEntity {
 		// please write your code here
 		// You should set the instance variable message to the
 		// message variable that's passed into this function
+		this.message = message;
 	}
 
 	/**
@@ -49,6 +52,7 @@ public class Reply extends AbstractEntity {
 	public User getUser() {
 		// please write your code here
 		// You should return the user instance variable
+		return this.user;
 	}
 
 	/**
@@ -60,6 +64,7 @@ public class Reply extends AbstractEntity {
 		// please write your code here
 		// You should set the instance variable user to the user variable
 		// that is passed into this method
+		this.user = user;
 	}
 
 	/**
@@ -70,6 +75,7 @@ public class Reply extends AbstractEntity {
 	public Question getQuestion() {
 		// please write your code here
 		// You should set the instance variable question
+		return this.question;
 	}
 
 	/**
@@ -81,5 +87,6 @@ public class Reply extends AbstractEntity {
 		// please write your code here
 		// You should set the instance variable question to the question variable
 		// that is passed into this method
+		this.question = question;
 	}
 }
