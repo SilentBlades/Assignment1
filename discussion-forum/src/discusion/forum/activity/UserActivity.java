@@ -156,6 +156,9 @@ public class UserActivity {
 					|| question.getUser().getUsername() == user.getUsername()) {
 				questionService.deleteQuestion(question);
 			}
+			else {
+				System.out.println("You are not authorised to delete this question");
+			}
 		}
 		else if(user.getUserRole() == UserRole.USER && question.getUser().getUsername() == user.getUsername()) {
 			questionService.deleteQuestion(question);
